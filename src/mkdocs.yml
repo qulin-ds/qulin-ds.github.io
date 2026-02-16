@@ -1,4 +1,5 @@
 site_name: Артем Мастеров
+site_dir: ../docs
 
 nav:
   - Главная: index.md
