@@ -1,7 +1,7 @@
 site_name: "Артем Мастеров — Портфолио"
 site_url: https://qulin-ds.github.io/
 site_dir: ../docs
-site_description: "Портфолио лабораторных работ по Python"
+site_description: "Портфолио лабораторных работ"
 
 theme:
   name: material
@@ -28,17 +28,20 @@ theme:
 nav:
   - "Главная": index.md
   - "Об авторе": about.md
-  - "Лабораторные работы":
-      - "Обзор": labs/index.md
-      - "ЛР 1. Two Sum": labs/lab1.md
-      - "ЛР 2. Бинарный поиск": labs/lab2.md
-      - "ЛР 3. Рекурсивное бинарное дерево": labs/lab3.md
-      - "ЛР 4. Бенчмарк рекурсии и итерации": labs/lab4.md
-      - "ЛР 5. Итеративное бинарное дерево": labs/lab5.md
-      - "ЛР 6. Сравнение производительности": labs/lab6.md
-      - "ЛР 7. Декоратор логирования": labs/lab7.md
-      - "ЛР 10. Численное интегрирование": labs/lab10.md
-      - "ЛР 11. Django Notes App": labs/lab11.md
+  - "1 семестр":
+      - "Обзор": labs/sem1/index.md
+      - "ЛР 1. Two Sum": labs/sem1/lab1.md
+      - "ЛР 2. Бинарный поиск": labs/sem1/lab2.md
+      - "ЛР 3. Рекурсивное бинарное дерево": labs/sem1/lab3.md
+      - "ЛР 4. Бенчмарк рекурсии и итерации": labs/sem1/lab4.md
+      - "ЛР 5. Итеративное бинарное дерево": labs/sem1/lab5.md
+      - "ЛР 6. Сравнение производительности": labs/sem1/lab6.md
+      - "ЛР 7. Декоратор логирования": labs/sem1/lab7.md
+      - "ЛР 10. Численное интегрирование": labs/sem1/lab10.md
+      - "ЛР 11. Django Notes App": labs/sem1/lab11.md
+  - "2 семестр":
+      - "Обзор": labs/sem2/index.md
+      - "ЛР 1. Статический сайт MkDocs": labs/sem2/lab1.md
 
 markdown_extensions:
   - admonition
