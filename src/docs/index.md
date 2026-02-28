@@ -1,18 +1,23 @@
-# Welcome to MkDocs
-Привет! Это мой обучающий сайт
+# Добро пожаловать
 
-For full documentation visit [mkdocs.org](https://www.mkdocs.org).
+Это сайт-портфолио **Артема Мастерова**, студента университета ИТМО, направление «Нейротехнологии и искусственный интеллект».
 
-## Commands
+Сайт создан с использованием генератора статических сайтов [MkDocs](https://www.mkdocs.org/) и темы [Material for MkDocs](https://squidfunk.github.io/mkdocs-material/).
 
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs -h` - Print help message and exit.
+## Навигация
 
-## Project layout
+- [Об авторе](about.md) — информация обо мне и моих интересах.
+- [Лабораторные работы](labs/index.md) — отчёты по лабораторным работам курса Python.
 
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
+## О сайте
+
+Данный сайт является портфолио лабораторных работ по курсу основ программирования на Python. Каждая лабораторная работа оформлена в виде отдельной страницы с единой структурой отчёта:
+
+1. **Цель работы**
+2. **Задание**
+3. **Код**
+4. **Выводы**
+
+Сайт опубликован через **GitHub Pages** из каталога `/docs` ветки `main`.
+
+Исходный код лабораторных: [github.com/qulin-ds/pythonf](https://github.com/qulin-ds/pythonf)

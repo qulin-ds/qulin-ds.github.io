@@ -1,6 +1,52 @@
-site_name: Артем Мастеров
+site_name: "Артем Мастеров — Портфолио"
+site_url: https://qulin-ds.github.io/
 site_dir: ../docs
+site_description: "Портфолио лабораторных работ по Python"
+
+theme:
+  name: material
+  language: ru
+  palette:
+    - scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: "Тёмная тема"
+    - scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: "Светлая тема"
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.top
+    - search.highlight
 
 nav:
-  - Главная: index.md
-  - О проекте: about.md
+  - "Главная": index.md
+  - "Об авторе": about.md
+  - "Лабораторные работы":
+      - "Обзор": labs/index.md
+      - "ЛР 1. Two Sum": labs/lab1.md
+      - "ЛР 2. Бинарный поиск": labs/lab2.md
+      - "ЛР 3. Рекурсивное бинарное дерево": labs/lab3.md
+      - "ЛР 4. Бенчмарк рекурсии и итерации": labs/lab4.md
+      - "ЛР 5. Итеративное бинарное дерево": labs/lab5.md
+      - "ЛР 6. Сравнение производительности": labs/lab6.md
+      - "ЛР 7. Декоратор логирования": labs/lab7.md
+      - "ЛР 10. Численное интегрирование": labs/lab10.md
+      - "ЛР 11. Django Notes App": labs/lab11.md
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - attr_list
+  - toc:
+      permalink: true
