@@ -2,58 +2,66 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://qulin-ds.github.io/</loc>
-         <lastmod>2026-02-28</lastmod>
+         <lastmod>2026-03-14</lastmod>
     </url>
     <url>
          <loc>https://qulin-ds.github.io/about/</loc>
-         <lastmod>2026-02-28</lastmod>
+         <lastmod>2026-03-14</lastmod>
+    </url>
+    <url>
+         <loc>https://qulin-ds.github.io/labs/</loc>
+         <lastmod>2026-03-14</lastmod>
     </url>
     <url>
          <loc>https://qulin-ds.github.io/labs/sem1/</loc>
-         <lastmod>2026-02-28</lastmod>
+         <lastmod>2026-03-14</lastmod>
     </url>
     <url>
          <loc>https://qulin-ds.github.io/labs/sem1/lab1/</loc>
-         <lastmod>2026-02-28</lastmod>
+         <lastmod>2026-03-14</lastmod>
     </url>
     <url>
          <loc>https://qulin-ds.github.io/labs/sem1/lab10/</loc>
-         <lastmod>2026-02-28</lastmod>
+         <lastmod>2026-03-14</lastmod>
     </url>
     <url>
          <loc>https://qulin-ds.github.io/labs/sem1/lab11/</loc>
-         <lastmod>2026-02-28</lastmod>
+         <lastmod>2026-03-14</lastmod>
     </url>
     <url>
          <loc>https://qulin-ds.github.io/labs/sem1/lab2/</loc>
-         <lastmod>2026-02-28</lastmod>
+         <lastmod>2026-03-14</lastmod>
     </url>
     <url>
          <loc>https://qulin-ds.github.io/labs/sem1/lab3/</loc>
-         <lastmod>2026-02-28</lastmod>
+         <lastmod>2026-03-14</lastmod>
     </url>
     <url>
          <loc>https://qulin-ds.github.io/labs/sem1/lab4/</loc>
-         <lastmod>2026-02-28</lastmod>
+         <lastmod>2026-03-14</lastmod>
     </url>
     <url>
          <loc>https://qulin-ds.github.io/labs/sem1/lab5/</loc>
-         <lastmod>2026-02-28</lastmod>
+         <lastmod>2026-03-14</lastmod>
     </url>
     <url>
          <loc>https://qulin-ds.github.io/labs/sem1/lab6/</loc>
-         <lastmod>2026-02-28</lastmod>
+         <lastmod>2026-03-14</lastmod>
     </url>
     <url>
          <loc>https://qulin-ds.github.io/labs/sem1/lab7/</loc>
-         <lastmod>2026-02-28</lastmod>
+         <lastmod>2026-03-14</lastmod>
     </url>
     <url>
          <loc>https://qulin-ds.github.io/labs/sem2/</loc>
-         <lastmod>2026-02-28</lastmod>
+         <lastmod>2026-03-14</lastmod>
     </url>
     <url>
          <loc>https://qulin-ds.github.io/labs/sem2/lab1/</loc>
-         <lastmod>2026-02-28</lastmod>
+         <lastmod>2026-03-14</lastmod>
+    </url>
+    <url>
+         <loc>https://qulin-ds.github.io/labs/sem2/lab2/</loc>
+         <lastmod>2026-03-14</lastmod>
     </url>
 </urlset>

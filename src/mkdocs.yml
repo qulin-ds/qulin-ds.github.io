@@ -1,7 +1,7 @@
 site_name: "Артем Мастеров — Портфолио"
 site_url: https://qulin-ds.github.io/
 site_dir: ../docs
-site_description: "Портфолио лабораторных работ"
+site_description: "Портфолио лабораторных работ по Python"
 
 theme:
   name: material
@@ -42,6 +42,7 @@ nav:
   - "2 семестр":
       - "Обзор": labs/sem2/index.md
       - "ЛР 1. Статический сайт MkDocs": labs/sem2/lab1.md
+      - "ЛР 2. NumPy — вычисления и анализ данных": labs/sem2/lab2.md
 
 markdown_extensions:
   - admonition
