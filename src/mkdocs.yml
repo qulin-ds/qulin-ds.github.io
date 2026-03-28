@@ -43,6 +43,7 @@ nav:
       - "Обзор": labs/sem2/index.md
       - "ЛР 1. Статический сайт MkDocs": labs/sem2/lab1.md
       - "ЛР 2. NumPy — вычисления и анализ данных": labs/sem2/lab2.md
+      - "ЛР 3. CI/CD для статического сайта в SourceCraft": labs/sem2/lab3.md
 
 markdown_extensions:
   - admonition
