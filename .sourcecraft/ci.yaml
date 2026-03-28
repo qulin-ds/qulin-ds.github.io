@@ -1,0 +1,32 @@
+on:
+  push:
+    - workflows: [build-site]
+      filter:
+        branches: [main]
+
+workflows:
+  build-site:
+    tasks:
+      - name: build-and-deploy
+        cubes:
+          - name: build-mkdocs
+            image: docker.io/library/python:3.12-slim
+            script:
+              - |
+                pip install mkdocs mkdocs-material
+                cd src
+                mkdocs build -d ../site
+
+          - name: deploy-to-release
+            needs: ["build-mkdocs"]
+            script:
+              - |
+                AUTH_URL=$(echo "$SOURCECRAFT_REPO_URL" | sed "s|git@|sourcecraft-ci:${SOURCECRAFT_TOKEN}@|")
+                git config --global user.name "CI Bot"
+                git config --global user.email "ci@sourcecraft.dev"
+                cd site
+                git init
+                git checkout -b release
+                git add -A
+                git commit -m "Deploy from ${SOURCECRAFT_COMMIT_SHORT_SHA}"
+                git push -f "$AUTH_URL" release
