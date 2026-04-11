@@ -1,0 +1,95 @@
+name: Deploy site
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+concurrency:
+  group: deploy-${{ github.ref }}
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install MkDocs
+        run: pip install mkdocs mkdocs-material
+
+      - name: Build static site
+        run: cd src && mkdocs build
+
+      - name: Upload artifact for GitHub Pages
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: docs
+
+      - name: Upload same build for SourceCraft push
+        uses: actions/upload-artifact@v4
+        with:
+          name: site-static
+          path: docs/
+
+  deploy-github-pages:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+
+  deploy-sourcecraft:
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: site-static
+          path: site
+
+      - name: Push static site to SourceCraft (branch release)
+        env:
+          SOURCECRAFT_TOKEN: ${{ secrets.SOURCECRAFT_TOKEN }}
+          SOURCECRAFT_REPO_URL: ${{ secrets.SOURCECRAFT_REPO_URL }}
+        run: |
+          set -e
+          if [ -z "${SOURCECRAFT_TOKEN}" ] || [ -z "${SOURCECRAFT_REPO_URL}" ]; then
+            echo "SourceCraft deploy skipped: add secrets SOURCECRAFT_TOKEN and SOURCECRAFT_REPO_URL on GitHub."
+            exit 0
+          fi
+          cd site
+          git init
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git checkout -b release
+          git add -A
+          git commit -m "Deploy from ${GITHUB_SHA:0:7}"
+          case "${SOURCECRAFT_REPO_URL}" in
+            https://*)
+              AUTH_URL=$(echo "${SOURCECRAFT_REPO_URL}" | sed "s|^https://|https://oauth2:${SOURCECRAFT_TOKEN}@|")
+              ;;
+            git@*)
+              AUTH_URL=$(echo "${SOURCECRAFT_REPO_URL}" | sed "s|git@|sourcecraft-ci:${SOURCECRAFT_TOKEN}@|")
+              ;;
+            *)
+              echo "Set SOURCECRAFT_REPO_URL to the HTTPS or SSH clone URL from SourceCraft."
+              exit 1
+              ;;
+          esac
+          git push -f "${AUTH_URL}" release
